@@ -6,7 +6,7 @@ mkdir -p $install_dir
 
 # nvxs
 cd nvxs
-./configure --prefix $install_dir --enable-openmp
+./configure --prefix $install_dir
 make all -j$(getconf _NPROCESSORS_ONLN)
 make install
 cd ${cdir}
