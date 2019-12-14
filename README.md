@@ -11,7 +11,18 @@ Original website: http://anime.udp.jp/ (in Japanese)
 Figure (c) namco
 
 
-## Installation
+## my installation
+ref. [this Japanese article](https://qiita.com/yukiweaver/items/52c45f442b9d9d59367e)
+
+1. For avoiding installation error, I used Linuxbrew.
+    - `brew install imagemagick@6`
+    - `brew install pkg-config`
+1. `export PKG_CONFIG_PATH=${HOME}/.linuxbrew/opt/imagemagick@6/lib/pkgconfig`
+1. `gem install rmagick`
+1. `./build.sh`
+
+
+## original author's installation
 
 Requirements
 - Ruby
