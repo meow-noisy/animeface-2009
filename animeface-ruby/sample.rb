@@ -46,9 +46,9 @@ faces.each do |ctx|
 end
 unless faces.empty?
   gc.draw(image)
-  image.write(output)
-  puts "#{faces.size} faces"
-  puts "See #{output}"
+  #image.write(output)
+  #puts "#{faces.size} faces"
+  #puts "See #{output}"
 else
   warn "No faces were detected."
 end
