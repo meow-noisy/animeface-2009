@@ -11,15 +11,27 @@ Original website: http://anime.udp.jp/ (in Japanese)
 Figure (c) namco
 
 
-## my installation
-ref. [this Japanese article](https://qiita.com/yukiweaver/items/52c45f442b9d9d59367e)
+## my installation(on Linux Ubuntu)
 
-1. For avoiding installation error, I used Linuxbrew.
+1. Install [Linuxbrew](https://docs.brew.sh/Homebrew-on-Linux)
+1. Install some packages
     - `brew install imagemagick@6`
     - `brew install pkg-config`
-1. `export PKG_CONFIG_PATH=${HOME}/.linuxbrew/opt/imagemagick@6/lib/pkgconfig`
-1. `gem install rmagick`
+1. add below lines to your shell setting file, edit lines for your environment and update your shell 
+```
+linuxbrew_root="???"
+
+export PATH="${linuxbrew_root}/opt/imagemagick@6/bin:$PATH"
+export LDFLAGS="-L${linuxbrew_root}/opt/imagemagick@6/lib"
+export CPPFLAGS="-I${linuxbrew_root}/opt/imagemagick@6/include"
+export PKG_CONFIG_PATH="${linuxbrew_root}/opt/imagemagick@6/lib/pkgconfig"
+export LD_LIBRARY_PATH="${linuxbrew_root}/Cellar/imagemagick@6/<**YOUR IMAGEMAGICK VERSION**>/lib:$LD_LIBRARY_PATH"  
+```
+4. `gem install rmagick`
 1. `./build.sh`
+
+ref1(Japanese): [RailsでRMagickを使う](https://qiita.com/yukiweaver/items/52c45f442b9d9d59367e)  
+ref2(Japanese): [linuxbrewで入れるrmagickの設定](https://takkii.hatenablog.com/entry/2019/02/28/200143)
 
 
 ## original author's installation
